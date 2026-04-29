@@ -3,7 +3,7 @@
 FastAPIで作成したCRUD APIをDocker化し、AWS EC2（Amazon Linux 2023）上にデプロイしたポートフォリオです。  
 Swagger UI を外部公開し、ブラウザからAPIの動作確認ができます。
 
-- 公開URL: `http://13.211.204.222/docs`
+- 公開URL: `http://13.211.123.75/docs#/`
 - API仕様: OpenAPI（FastAPI自動生成）
 
 ---
