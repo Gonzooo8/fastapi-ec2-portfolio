@@ -1,58 +1,61 @@
-# FastAPI Todo API on AWS EC2 (Docker)
+# FastAPI Todo API on AWS EC2 (Docker + Terraform)
 
-FastAPIで作成したCRUD APIをDocker化し、AWS EC2（Amazon Linux 2023）上にデプロイしたポートフォリオです。  
-Swagger UI を外部公開し、ブラウザからAPIの動作確認ができます。
+FastAPIで作成したCRUD APIをDockerコンテナとして構築し、Terraformで作成したAWS EC2上へデプロイしたポートフォリオです。
 
-- 公開URL: `http://13.113.6.129/docs`
-- API仕様: OpenAPI（FastAPI自動生成）
+Swagger UIを外部公開しており、ブラウザからAPIの動作確認が可能です。
 
----
+## 公開URL
+
+Swagger UI
+http://13.113.6.129/docs
+
+Health Check
+http://13.113.6.129/health
 
 ## 概要
 
-このプロジェクトでは、以下を実施しました。
+このプロジェクトでは以下を実施しました。
 
-- FastAPIでCRUD APIを作成
-- Dockerでコンテナ化
-- GitHubでソースコード管理
-- AWS EC2（Amazon Linux 2023）にSSH接続
-- EC2上でDockerをセットアップ
-- コンテナ起動して外部公開（HTTP 80）
-
----
+* FastAPIによるCRUD API開発
+* Dockerによるコンテナ化
+* GitHubによるソースコード管理
+* TerraformによるAWSインフラ構築
+* Security Group設定による通信制御
+* AWS EC2（Ubuntu Server）へのデプロイ
+* Dockerコンテナとしてアプリケーションを公開
+* Swagger UIによるAPIドキュメント公開
 
 ## 使用技術
 
-- Python 3.11
-- FastAPI
-- Uvicorn
-- Docker
-- AWS EC2 (Amazon Linux 2023)
-- Git / GitHub
-- Ubuntu (WSL) / PowerShell（ローカル作業）
-
----
+* Python 3.11
+* FastAPI
+* Uvicorn
+* Docker
+* Terraform
+* AWS EC2
+* AWS Security Group
+* Git / GitHub
+* Ubuntu (WSL)
 
 ## API一覧
 
-- `GET /health` - ヘルスチェック
-- `GET /items` - 一覧取得
-- `POST /items` - 作成
-- `GET /items/{item_id}` - 詳細取得
-- `PUT /items/{item_id}` - 更新
-- `DELETE /items/{item_id}` - 削除
+* GET /health - ヘルスチェック
+* GET /items - 一覧取得
+* POST /items - 作成
+* GET /items/{item_id} - 詳細取得
+* PUT /items/{item_id} - 更新
+* DELETE /items/{item_id} - 削除
 
-Swagger UI:
-- `/docs`
+## 構成
 
-OpenAPI JSON:
-- `/openapi.json`
-
----
+1. TerraformでEC2とSecurity Groupを作成
+2. GitHubからアプリケーションを取得
+3. Dockerイメージをビルド
+4. Dockerコンテナを起動
+5. FastAPIを外部公開
 
 ## ディレクトリ構成
 
-```text
 .
 ├── Dockerfile
 ├── main.py
