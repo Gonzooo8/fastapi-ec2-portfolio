@@ -9,8 +9,6 @@ Swagger UIを外部公開しており、ブラウザからAPIの動作確認が�
 Swagger UI
 http://13.113.6.129/docs
 
-Health Check
-http://13.113.6.129/health
 
 ## 概要
 
