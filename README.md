@@ -55,13 +55,15 @@ Swagger UIを公開し、外部からAPIの動作確認が可能な構成にし�
 ## インフラ構成
 
 ```text
-TerraformでAWS EC2を構築
- ↓
-Security Groupでポート制御（22/80/443）
- ↓
-EC2上でDockerコンテナを実行
- ↓
-FastAPIを外部公開
+Internet
+    ↓
+Security Group (22/80/443)※HTTPS（443）はコストが発生するため未実装
+    ↓
+EC2 (Ubuntu Server)
+    ↓
+Docker Container
+    ↓
+FastAPI Application
 ```
 
 ---
