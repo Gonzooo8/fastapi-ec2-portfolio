@@ -1,8 +1,8 @@
 # FastAPI Todo API on AWS EC2 (Docker + Terraform)
 
-FastAPIで作成したCRUD APIをDockerコンテナとして構築し、Terraformで作成したAWS EC2上へデプロイしたポートフォリオです。
-
-Swagger UIを外部公開しており、ブラウザからAPIの動作確認ができます。
+FastAPIでCRUD APIを作成し、Dockerでコンテナ化しました。
+インフラはTerraformでAWS EC2とSecurity Groupを構築し、クラウド上にデプロイしています。
+Swagger UIを公開し、外部からAPIの動作確認が可能な構成にしています。
 
 ## 公開URL
 
